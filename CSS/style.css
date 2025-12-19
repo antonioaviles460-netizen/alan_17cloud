@@ -1,0 +1,217 @@
+/* CSS: DISEÑO Y RESPONSIVIDAD - ALAN 17 (AZUL/NEGRO/BLANCO) */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+        font-family: 'Inter', sans-serif; 
+        background-color: #050505; /* Negro más profundo */
+        color: #ffffff; /* Blanco */
+        line-height: 1.6; 
+        overflow-x: hidden;
+    }
+
+    section { padding: 60px 20px; max-inline-size: 1200px; margin: 0 auto; }
+    
+    /* Títulos con sombra azul para profundidad */
+    .title { 
+        text-align: center; 
+        margin-block-end: 30px; 
+        font-size: 2.5rem; 
+        text-transform: uppercase; 
+        letter-spacing: 2px;
+        text-shadow: 0 0 15px rgba(127, 150, 173, 0.008); 
+    }
+
+    /* HERO AREA */
+    .hero {
+        block-size: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /* Degradado azul a negro sobre la imagen */
+        background: linear-gradient(rgba(109, 4, 4, 0.425), #05050505), url('../IMG/fotter.webp'); 
+        background-size: cover;
+        background-position: center;
+        border-block-end: 1px solid #1195ee;
+    }
+ 
+    .hero h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 900;
+    margin-block-start: 550px;
+    text-shadow: 15px 0 25px rgba(0, 123, 255, 0.8);
+}
+
+
+    /* BOTONES ESTILO AZUL/BLANCO */
+    .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #007bff; /* Azul */
+        color: #fff; /* Blanco */
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px; /* Un look más rectangular y moderno */
+        transition: 0.3s ease;
+        margin-block-start: 20px;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    }
+    
+    .btn:hover { 
+        transform: scale(1.05); 
+        background: #575a58; 
+        color: #000; 
+        box-shadow: 0 0 20px #007bff;
+    }
+
+    /* COUNTDOWN RESPONSIVO */
+    .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap; 
+    }
+    .time-box {
+        background: #111; /* Negro Card */
+        padding: 20px;
+        border-radius: 8px;
+        min-inline-size: 100px;
+        text-align: center;
+        border: 1px solid #222;
+        border-block-end: 3px solid #007bff; /* Detalle azul inferior */
+    }
+    .time-box h3 { font-size: 2rem; color: #007bff; } /* Números Azules */
+
+    /* GRID DE MÚSICA */
+    .music-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .card { 
+        background: #111; 
+        padding: 15px; 
+        border-radius: 10px; 
+        border: 1px solid #222;
+        transition: 0.3s;
+    }
+    .card:hover { border-color: #007bff; }
+
+    /* VIDEO RESPONSIVO */
+    .video-wrapper {
+        position: relative;
+        padding-block-end: 56.25%; 
+        block-size: 0;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .video-wrapper iframe {
+        position: absolute;
+        inset-block-start: 0; inset-inline-start: 0; inline-size: 100%; block-size: 100%;
+    }
+/* ====== GALERÍA ====== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery img { 
+  inline-size: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover; 
+  border-radius: 8px; 
+  filter: grayscale(20%);
+  transition: 0.4s ease;
+}
+
+.gallery img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+
+/* ====== REDES SOCIALES ====== */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.social-icon img { 
+  inline-size: 60px; 
+  transition: 0.3s ease;
+}
+
+.social-icon:hover img { 
+  transform: translateY(-10px); 
+}
+
+/* ====== FOOTER ====== */
+footer { 
+  text-align: center; 
+  padding: 40px; 
+  border-block-start: 1px solid #111; 
+  font-size: 0.9rem; 
+  color: #555; 
+  background: #000;
+}
+
+/* ====== AJUSTES PARA CELULARES ====== */
+@media (max-width: 600px) {
+  .time-box { 
+    min-inline-size: 70px; 
+    padding: 10px; 
+  }
+
+  .time-box h3 { 
+    font-size: 1.5rem; 
+  }
+
+  .title { 
+    font-size: 1.8rem; 
+  }
+
+  .hero { 
+    block-size: 80vh; 
+  }
+}
+
+/* ====== CARRUSEL ====== */
+.carousel {
+  position: relative;
+  inline-size: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slide img {
+  inline-size: 100%;
+  aspect-ratio: 16/16;
+  object-fit: cover;
+  border-radius: 250px;
+}
+
+.prev, .next {
+  position: relative;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  background: #65a13d;
+  color: rgb(221, 16, 16);
+  border: none;
+  font-size: 2rem;
+  cursor: wait;
+  z-index: 10;
+}
+
+.prev { inset-inline-start: 1px; }
+.next { inset-inline-end: 10px; }
